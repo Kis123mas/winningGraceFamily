@@ -6,6 +6,7 @@ from django import forms
 
 from .models import *
 
+# form for Member
 class MemberForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -82,7 +83,7 @@ class MemberForm(ModelForm):
             'required':'',
             'name': 'department',
             'type':'text',
-            'class':'form-control',
+            'class':'form-select',
             'id':'fullName'
         })
         self.fields["twitter_profile"].widget.attrs.update({
@@ -108,4 +109,38 @@ class MemberForm(ModelForm):
         })
     class Meta:
         model = Member
+        fields = '__all__'
+
+
+# form for prayer request
+class PrayerForm(ModelForm):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.fields["name"].widget.attrs.update({
+            'required':'',
+            'name': 'name',
+            'type':'text',
+            'class':'form-control',
+            'id':'floatingName',
+            'placeholder':'Your Name',
+        })
+        self.fields["title"].widget.attrs.update({
+            'required':'',
+            'name': 'title',
+            'type':'text',
+            'class':'form-control',
+            'id':'flostingName',
+            'placeholder':'Your Prayer Request Title',
+        })
+        self.fields["content"].widget.attrs.update({
+            'required':'',
+            'name': 'phone',
+            'type':'text',
+            'class':'form-control',
+            'style':'height: 100px;',
+            'placeholder':'Address',
+            'id':'floatingTextarea',
+        })
+    class Meta:
+        model = Prayer
         fields = '__all__'

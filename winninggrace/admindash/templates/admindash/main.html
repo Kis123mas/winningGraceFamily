@@ -34,9 +34,9 @@
     <header id="header" class="header fixed-top d-flex align-items-center">
 
         <div class="d-flex align-items-center justify-content-between">
-            <a href="index.html" class="logo d-flex align-items-center">
+            <a href="{% url 'adminpage' %}" class="logo d-flex align-items-center">
                 <img src="assets/img/logo.png" alt="">
-                <span class="d-none d-lg-block">NiceAdmin</span>
+                <span class="d-none d-lg-block">WinningGraceFamily</span>
             </a>
             <i class="bi bi-list toggle-sidebar-btn"></i>
         </div><!-- End Logo -->
@@ -281,18 +281,43 @@
             </li><!-- End Profile Page Nav -->
 
             <li class="nav-item">
+                <a class="nav-link collapsed" href="{% url 'announcementform' %}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Announcement Form</span>
+                </a>
+            </li><!-- End Contact Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{% url 'programform' %}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Program Form</span>
+                </a>
+            </li><!-- End Contact Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{% url 'eventform' %}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Event Form</span>
+                </a>
+            </li><!-- End Contact Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{% url 'seedofwinform' %}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Seed Of Wining Grace Form</span>
+                </a>
+            </li><!-- End Contact Page Nav -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{% url 'recommendedbibleform' %}">
+                    <i class="bi bi-envelope"></i>
+                    <span>Recommended Bible Form</span>
+                </a>
+            </li><!-- End Contact Page Nav -->
+            
+
+            <li class="nav-item">
                 <a class="nav-link collapsed" href="pages-faq.html">
                     <i class="bi bi-question-circle"></i>
                     <span>F.A.Q</span>
                 </a>
             </li><!-- End F.A.Q Page Nav -->
-
-            <li class="nav-item">
-                <a class="nav-link collapsed" href="pages-contact.html">
-                    <i class="bi bi-envelope"></i>
-                    <span>Contact</span>
-                </a>
-            </li><!-- End Contact Page Nav -->
 
             <li class="nav-item">
                 <a class="nav-link collapsed" href="pages-register.html">
@@ -304,7 +329,7 @@
             <li class="nav-item">
                 <a class="nav-link collapsed" href="pages-login.html">
                     <i class="bi bi-box-arrow-in-right"></i>
-                    <span>Login</span>
+                    <span>Log Out</span>
                 </a>
             </li><!-- End Login Page Nav -->
 

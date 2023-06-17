@@ -75,6 +75,17 @@
         <!-- HOME -->
         <section id="home" class="full-height px-lg-5">
 
+            
+            <!-- message on successfull submission -->
+            {% for message in messages %}
+            <div class="alert alert-primary bg-primary text-light border-0 alert-dismissible fade show" role="alert">
+                {{message}}
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="alert"
+                    aria-label="Close"></button>
+            </div>
+            {% endfor %}
+
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-10">
@@ -234,7 +245,8 @@
                             <div class="col-12" data-aos="fade-up" data-aos-delay="600">
                                 <div class="bg-base p-4 rounded-4 shadow-effect">
                                     <h4>FOR WHOM WE DO THESE?</h4>
-                                    <p class="text-brand mb-2">For humanity, borne out of compassion and passion for soul.
+                                    <p class="text-brand mb-2">For humanity, borne out of compassion and passion for
+                                        soul.
                                     </p>
                                 </div>
                             </div>
@@ -425,7 +437,7 @@
                         </h1>
                     </div>
 
-                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300" >
+                    <div class="col-lg-8" data-aos="fade-up" data-aos-delay="300">
                         <form action="#" method="POST" action="" class="row g-lg-3 gy-3">
                             {% csrf_token %}
                             <div class="form-group col-md-6">

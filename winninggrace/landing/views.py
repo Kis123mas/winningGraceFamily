@@ -15,6 +15,7 @@ def landingPage(request):
     if request.method == 'POST':
         if form.is_valid:
             form.save()
+            messages.success(request, 'Congratulations! We Will Get Back To You.')
             return redirect('landingpage')
             
     context = {'form':form}

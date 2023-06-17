@@ -1,0 +1,49 @@
+{% extends 'admindash/main.html' %}
+{% load static %}
+
+{% block content %}
+<main id="main" class="main">
+
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">Recommended Bible Form</h5>
+
+            <!-- General Form Elements -->
+            <form method="POST" action="">
+                {% csrf_token %}
+                <div class="row mb-3">
+                    <label for="inputText" class="col-sm-2 col-form-label">Verse One</label>
+                    <div class="col-sm-10">
+                        {{form.verseone}}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputEmail" class="col-sm-2 col-form-label">Verse Two</label>
+                    <div class="col-sm-10">
+                        {{form.versetwo}}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Verse Three</label>
+                    <div class="col-sm-10">
+                        {{form.versethree}}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <label for="inputNumber" class="col-sm-2 col-form-label">Verse Four</label>
+                    <div class="col-sm-10">
+                        {{form.versefour}}
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">SEND</button>
+                    </div>
+                </div>
+
+            </form><!-- End General Form Elements -->
+
+        </div>
+    </div>
+</main><!-- End #main -->
+{% endblock %}
