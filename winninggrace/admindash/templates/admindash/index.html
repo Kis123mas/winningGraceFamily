@@ -58,7 +58,7 @@
                       <td>{{s.bible_reading}}</td>
                       <td><a href="#"></a>LINK</td>
                       <td><a href="{% url 'updateseedofwin' s.id %}"><button type="button" class="btn btn-warning">UPDATE</button></a></td>
-                      <td><a href="#"><button type="button" class="btn btn-danger">DELETE</button></a></td>
+                      <td><a href="{% url 'deleteseedofwin' s.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
                     </tr>
                   </tbody>
                   {% endfor %}
@@ -89,7 +89,7 @@
                       <td>{{p.title}}</td>
                       <td><a href="#" class="text-primary">{{p.department}}</a></td>
                       <td><a href="{% url 'updateprogram' p.id %}"><button type="button" class="btn btn-warning">UPDATE</button></a></td>
-                      <td><a href="#"><button type="button" class="btn btn-danger">DELETE</button></a></td>
+                      <td><a href="{% url 'deleteprogram' p.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
                     </tr>
 
                   </tbody>
@@ -110,7 +110,6 @@
                 <table class="table table-borderless">
                   <thead>
                     <tr>
-                      <th scope="col">PICTURE</th>
                       <th scope="col">NAME</th>
                       <th scope="col">TITLE</th>
                       <th scope="col">DATE</th>
@@ -121,12 +120,11 @@
                   {% for e in events %}
                   <tbody>
                     <tr>
-                      <th scope="row"><a href="#"><img src="{{ e.pics }}" alt=""></a></th>
                       <td><a href="#" class="text-primary fw-bold">{{e.name}}</a></td>
                       <td>{{e.title}}</td>
                       <td>{{e.date}}</td>
                       <td><a href="{% url 'updateevent' e.id %}"><button type="button" class="btn btn-warning">UPDATE</button></a></td>
-                      <td><a href="#"><button type="button" class="btn btn-danger">DELETE</button></a></td>
+                      <td><a href="{% url 'deleteevent' e.id %}"><button type="button" class="btn btn-danger">DELETE</button></a></td>
                     </tr>
                   </tbody>
                   {% endfor %}
@@ -155,7 +153,7 @@
                 <h4><a href="#">{{a.subject}}</a></h4>
                 <p>{{a.message}}</p>
                 <td><a href="{% url 'updateannouncement' a.id %}"><span class="badge bg-warning">UPDATE</span></a></td>
-                <td><a href="#"><span class="badge bg-danger">DELETE</span></a></td>
+                <td><a href="{% url 'deleteannouncement' a.id %}"><span class="badge bg-danger">DELETE</span></a></td>
                 <hr>
               </div>
               {% endfor %}
@@ -180,7 +178,7 @@
                 </div>
               </div><!-- End activity item-->
               <td><a href="{% url 'updaterecommendedbible' r.id %}"><span class="badge bg-warning">UPDATE</span></a></td>
-              <td><a href="#"><span class="badge bg-danger">DELETE</span></a></td>
+              <td><a href="{% url 'deleterecommendedbible' r.id %}"><span class="badge bg-danger">DELETE</span></a></td>
             </div>
             {% endfor %}
 

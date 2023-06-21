@@ -2,12 +2,16 @@ from django.shortcuts import render, redirect
 from .forms import MemberForm, PrayerForm
 from django.contrib import messages
 from .models import *
-
+from django.contrib.auth.decorators import login_required
+from users.urls import *
+from django.contrib.auth.models import User
+from userdash.decorators import *
 
 # Create your views here.
 
 
 # view for uer dashboard
+@login_required(login_url='loginpage')
 def userdashPage(request):
     programs = Program.objects.all()
     events = Event.objects.all()
@@ -23,6 +27,8 @@ def userdashPage(request):
 
 
 # view for userprofile
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['member', 'admin'])
 def profilePage(request):
 
     member = request.user.member
@@ -38,6 +44,8 @@ def profilePage(request):
 
 
 # view for prayer request
+@login_required(login_url='login')
+@allowed_users(allowed_roles=['member'])
 def prayerRequestPage(request):
 
     form = PrayerForm(request.POST)

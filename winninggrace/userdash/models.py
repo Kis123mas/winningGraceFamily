@@ -13,7 +13,7 @@ class Member(models.Model):
         ('Eminence Children', 'Eminence Children'),
     )
     user = models.OneToOneField(User, null=True, on_delete=models.CASCADE)
-    profile_pic = models.ImageField(default="profile2.png", null=True, blank=True)
+    profile_pic = models.ImageField(default="profile2.png", null=True)
     firstname = models.CharField(max_length=200, null=True, blank=True)
     middlename = models.CharField(max_length=200, null=True, blank=True)
     lastname = models.CharField(max_length=200, null=True, blank=True)
@@ -67,7 +67,6 @@ class Program(models.Model):
 
 # model for event.
 class Event(models.Model):
-    pics = models.ImageField(default="profile2.png", null=True, blank=True)
     name = models.CharField(max_length=155, null=True, blank=True)
     title = models.CharField(max_length=5000)
     date = models.DateField(max_length=200, null=True, blank=True)

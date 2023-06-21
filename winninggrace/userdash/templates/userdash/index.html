@@ -114,15 +114,17 @@
                       <th scope="col">LINK</th>
                     </tr>
                   </thead>
+                  {% for s in seedofwins %}
                   <tbody>
                     <tr>
-                      <td>Brandon Jacob</td>
-                      <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                      <td>$64</td>
-                      <td>$64</td>
+                      <td>{{s.title}}</td>
+                      <td><a href="#" class="text-primary">{{s.bible_verse}}</a></td>
+                      <td>{{s.power_capsule}}</td>
+                      <td>{{s.bible_reading}}</td>
                       <td><a href="#"><span class="badge bg-success">Share</span></a></td>
                     </tr>
                   </tbody>
+                  {% endfor %}
                 </table>
 
               </div>
@@ -187,19 +189,20 @@
                       <th scope="col">DATE</th>
                     </tr>
                   </thead>
+
+                  {% for p in programs %}
                   <tbody>
                     <tr>
-                      <td>Brandon Jacob</td>
-                      <td><a href="#" class="text-primary">At praesentium minu</a></td>
-                      <td>$64</td>
-                      <td><span class="badge bg-success">Approved</span></td>
+                      <td>{{p.title}}</td>
+                      <td><a href="#">{{p.department}}</a></td>
+                      <td>{{p.theme}}</td>
+                      <td><span>{{p.date}}</span></td>
                     </tr>
-
                   </tbody>
+                  {% endfor %}
+
                 </table>
-
               </div>
-
             </div>
           </div><!-- End Program-->
 
@@ -266,43 +269,26 @@
                 <table class="table table-borderless">
                   <thead>
                     <tr>
-                      <th scope="col">PICTURE</th>
                       <th scope="col">NAME</th>
                       <th scope="col">TITLE</th>
                       <th scope="col">DATE</th>
                       <th scope="col">LINK</th>
                     </tr>
                   </thead>
+                  {% for e in events %}
                   <tbody>
                     <tr>
-                      <th scope="row"><a href="#"><img src="{% static 'assets/img/slides-3.png' %}" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Ut inventore ipsa voluptas nulla</a></td>
-                      <td>$64</td>
-                      <td class="fw-bold">124</td>
-                      <td class="badge bg-success">$5,828</td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#"><img src="{% static 'assets/img/slides-3.png' %}" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Exercitationem similique doloremque</a></td>
-                      <td>$46</td>
-                      <td class="fw-bold">98</td>
-                      <td class="badge bg-success">$4,508</td>
-                    </tr>
-                    <tr>
-                      <th scope="row"><a href="#"><img src="{% static 'assets/img/slides-3.png' %}" alt=""></a></th>
-                      <td><a href="#" class="text-primary fw-bold">Doloribus nisi exercitationem</a></td>
-                      <td>$59</td>
-                      <td class="fw-bold">74</td>
-                      <td class="badge bg-success">$4,366</td>
+                      <td><a href="#">{{e.name}}</a></td>
+                      <td>{{e.title}}</td>
+                      <td class="fw-bold">{{e.date}}</td>
+                      <td><a href="#" class="badge bg-success">share</a></td>
                     </tr>
                   </tbody>
+                  {% endfor %}
                 </table>
-
               </div>
-
             </div>
           </div><!-- End Event -->
-
         </div>
       </div><!-- End Left side columns -->
 
@@ -368,29 +354,17 @@
         <!-- Announcement -->
         <div class="card">
           <div class="card-body pb-0">
-            <h5 class="card-title">ANNOUNCEMENT<span>| Today</span></h5>
+            <h5 class="card-title">ANNOUNCEMENT<span></span></h5>
 
+            {% for a in announcement %}
             <div class="news">
               <div class="post-item clearfix">
                 <img src="{% static 'dashboardassets/img/news-1.jpg' %}" alt="">
-                <h4><a href="#">Nihil blanditiis at in nihil autem</a></h4>
-                <p>Sit recusandae non aspernatur laboriosam. Quia enim eligendi sed ut harum...</p>
+                <h4><a href="#">{{a.subject}}</a></h4>
+                <p>{{a.message}}</p>
               </div>
-
-              <div class="post-item clearfix">
-                <img src="{% static 'assets/img/slides-3.png' %}" alt="">
-                <h4><a href="#">Quidem autem et impedit</a></h4>
-                <p>Illo nemo neque maiores vitae officiis cum eum turos elan dries werona nande...</p>
-              </div>
-
-              <div class="post-item clearfix">
-                <img src="{% static 'assets/img/slides-3.png' %}" alt="">
-                <h4><a href="#">Id quia et et ut maxime similique occaecati ut</a></h4>
-                <p>Fugiat voluptas vero eaque accusantium eos. Consequuntur sed ipsam et totam...</p>
-              </div>
-
             </div><!-- announcement-->
-
+            {% endfor %}
           </div>
         </div><!-- End News & Updates -->
 
@@ -444,16 +418,13 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
-
             </div><!-- End Slides with captions -->
-
           </div>
         </div>
 
 
         <!-- Recommended bible verse -->
         <div class="card">
-
           <div class="card-body">
             <h5 class="card-title">Recommended Bible Verse For January <span></span></h5>
 
@@ -471,17 +442,11 @@
 
             <hr>
             <td><a href="#"><span class="badge bg-success">VIEW MORE</span></a></td>
-
           </div>
         </div><!-- End Recommended bible verse -->
-
-
-
       </div><!-- End Right side columns -->
-
     </div>
   </section>
-
 </main><!-- End #main -->
 
 {% endblock %}

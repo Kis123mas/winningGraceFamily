@@ -34,12 +34,6 @@ class AnnouncementForm(ModelForm):
 class EventForm(ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields["pics"].widget.attrs.update({
-            'class':'btn btn-primary btn-sm',
-            'title':'Upload new profile image',
-            'class':'bi bi-upload',
-            'name':'profile_pic'
-        })
         self.fields["name"].widget.attrs.update({
             'required':'',
             'name': 'name',
